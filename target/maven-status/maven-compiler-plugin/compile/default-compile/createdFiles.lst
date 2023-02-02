@@ -1,0 +1,8 @@
+br\com\carlos\projeto01\jsf\MembroController.class
+br\com\carlos\projeto01\dao\ClienteDao.class
+br\com\carlos\projeto01\dao\database\HibernateUtil.class
+br\com\carlos\projeto01\dao\MembroDao.class
+br\com\carlos\projeto01\dao\GenericDao.class
+br\com\carlos\projeto01\model\Cliente.class
+br\com\carlos\projeto01\jsf\ClienteController.class
+br\com\carlos\projeto01\model\Membro.class

@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Listagem de Clientes</title>
+        <h:outputStylesheet library="webjars" name="font-awesome/5.12.0/css/all.min-jsf.css" />
+        <h:outputStylesheet library="webjars" name="font-awesome/5.12.0/css/v4-shims.min-jsf.css" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:dataTable value="#{clienteController.items}" var="item">
+             <p:column colspan="2"
+                                               headerText="Id" 
+                                               sortBy="#{item.id}" 
+                                               filterBy="#{item.id}"
+                                               filterMatchMode="contains">                           
+                                        <p:outputLabel value="#{item.id}" />
+                 </p:column>
+                
+                <p:column colspan="4"
+                                               headerText="Nome" 
+                                               sortBy="#{item.nome}" 
+                                               filterBy="#{item.nome}"
+                                               filterMatchMode="contains">                           
+                                        <p:outputLabel value="#{item.nome}" />
+                 </p:column>
+               <p:column colspan="4"
+                                               headerText="SALDO" 
+                                              >                           
+                   <p:outputLabel value="#{item.saldo}" />
+                 </p:column>
+               
+                <p:column colspan="4" headerText="&nbsp;">                           
+                    
+                     <p:commandButton icon="fa fw fa-edit"
+                                    class="ui-button-secondary"
+                                    action="#{clienteController.editar(item.id)}" >
+                                        </p:commandButton>
+                    
+                    <h:outputText value="&nbsp;"/>
+                    
+                     <p:commandButton icon="fa fw fa-trash"
+                                    class="ui-button-danger"
+                                    action="#{clienteController.excluir(item.id)}" >
+                                        </p:commandButton>
+                 </p:column>
+        
+        </p:dataTable>
+             <br/>
+             <br/>
+                    
+            
+                     <p:commandButton icon="fa fw fa-plus"
+                                    class="ui-button-primary"
+                                    action="#{clienteController.adicionar}" 
+                                    value="Novo"
+                                    >
+                                        </p:commandButton>
+                   
+            
+        </h:form>
+    </h:body>
+</html>
+
